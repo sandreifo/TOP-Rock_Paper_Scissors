@@ -11,36 +11,43 @@
 </body>
 <script>
 
-    const options = ["Rock", "Paper", "Scissors"];
+    const options = ["rock", "paper", "scissors"];
 
     //Function to generate a random selection by the computer
     function getComputerChoice()
-    {let computerChoice = options[Math.floor(Math.random() * options.length)];
-    return computerChoice;}
+    {return options[Math.floor(Math.random() * options.length)];
+    }
     
-    console.log(getComputerChoice())
+    //Define computer's and player's choices
+
+    let computerChoice = getComputerChoice()
+    console.log(computerChoice)
 
     let playerChoice = prompt ("Write rock, paper or scissors", "")
+    console.log(playerChoice)
 
     //Function to compare both selections and determine a winner
+
     function selectionComparison (a, y)
-    {if (a==y) 
-        {window.alert("This was a tie!")}
-    else if (a=="rock" & y=="paper")
-        {window.alert("You Win! Paper beats Rock")}
-    else if (a=="rock" & y=="scissors")
-        {window.alert("You Lose! Scissors beats Rock")}
-    else if (a=="paper" & y=="rock")
-        {window.alert("You Lose! Paper beats Rock")}
-    else if (a=="paper" & y=="scissors")
-        {window.alert("You Win! Scissors beats Paper")}
-    else if (a=="scissors" & y=="paper")
-        {window.alert("You Lose! Scissors beats Paper")}
-    else if (a=="scissors" & y=="rock")
-        {window.alert("You Win! Rock beats Scissors")}
+    {console.log(a + y)
+        
+        if (a===y) 
+            {window.alert("This was a tie!")}
+        else if (a==="rock" & y==="paper")
+            {window.alert("You Win! Paper beats Rock")}
+        else if (a==="rock" & y==="scissors")
+            {window.alert("You Lose! Scissors beats Rock")}
+        else if (a==="paper" & y==="rock")
+            {window.alert("You Lose! Paper beats Rock")}
+        else if (a==="paper" & y==="scissors")
+            {window.alert("You Win! Scissors beats Paper")}
+        else if (a==="scissors" & y==="paper")
+            {window.alert("You Lose! Scissors beats Paper")}
+        else if (a==="scissors" & y==="rock")
+            {window.alert("You Win! Rock beats Scissors")}
     }
 
-    selectionComparison (getComputerChoice(), playerChoice)
+    selectionComparison (computerChoice, playerChoice)
 
 
 
