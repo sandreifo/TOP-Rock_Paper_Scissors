@@ -23,7 +23,7 @@
     let computerChoice = getComputerChoice()
     console.log(computerChoice)
 
-    let playerChoice = prompt ("Write rock, paper or scissors", "")
+    let playerChoice = (prompt ("Write rock, paper or scissors", "")).toLowerCase()
     console.log(playerChoice)
 
     //Function to compare both selections and determine a winner
@@ -45,6 +45,7 @@
             {window.alert("You Lose! Scissors beats Paper")}
         else if (a==="scissors" & y==="rock")
             {window.alert("You Win! Rock beats Scissors")}
+        else {window.alert("Choose Rock Paper or Scissors")}
     }
 
     selectionComparison (computerChoice, playerChoice)
