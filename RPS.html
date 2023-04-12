@@ -22,6 +22,7 @@
     let scoreC = 0
     let scoreP = 0
     function selectionComparison (a, y)
+   
     {if (a===y) 
             {window.alert("This was a tie!");
             return "tie";}
@@ -29,7 +30,7 @@
             {window.alert("You Win! Paper beats Rock");
             return "win";}
     else if (a==="rock" & y==="scissors")
-            {window.alert("You Lose! Scissors beats Rock")
+            {window.alert("You Lose! Rock beats Scissors")
             return "lose"}
     else if (a==="paper" & y==="rock")
             {window.alert("You Lose! Paper beats Rock")
@@ -73,6 +74,12 @@
     game ()
     console.log(scoreC , scoreP)
 
+    if (scoreC>scoreP)
+        {alert("You Lose")}
+    else if (scoreC<scoreP)
+        {alert("You win")}
+    else
+        {alert("It is a tie")}
 
 </script>
 </html>
