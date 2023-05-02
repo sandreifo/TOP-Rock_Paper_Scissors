@@ -12,69 +12,90 @@
 <button class = "Paper"> Paper </button>
 <button class = "Scissors"> Scissors </button>
 
+<div class="results"></div>
+
     
 </body>
 <script>
-
+    
     const options = ["rock", "paper", "scissors"];
+
+    const rock = document.querySelector(".Rock");
+    const paper = document.querySelector(".Paper")
+    const scissors = document.querySelector(".Scissors")
+
+    rock.addEventListener("click", () => {
+        let playerChoice = "rock"
+        game(playerChoice);
+    } );
+
+    paper.addEventListener("click", () => {
+        let playerChoice = "paper"
+        game(playerChoice);
+    } );
+
+    scissors.addEventListener("click", () => {
+        let playerChoice = "scissors"
+        game(playerChoice);
+    } );
 
     //Function to generate a random selection by the computer
     function getComputerChoice()
     {return options[Math.floor(Math.random() * options.length)];
     }
 
+    const div = document.querySelector('div')
+
     //Function to compare both selections and determine a winner
     let scoreC = 0
     let scoreP = 0
     function selectionComparison (a, y)
-   
     {if (a===y) 
-            {window.alert("This was a tie!");
+            {div.textContent =("This was a tie!");
             return "tie";}
     else if (a==="rock" & y==="paper")
-            {window.alert("You Win! Paper beats Rock");
+            {div.textContent =("You Win! Paper beats Rock");
             return "win";}
     else if (a==="rock" & y==="scissors")
-            {window.alert("You Lose! Rock beats Scissors")
+            {div.textContent =("You Lose! Rock beats Scissors")
             return "lose"}
     else if (a==="paper" & y==="rock")
-            {window.alert("You Lose! Paper beats Rock")
+            {div.textContent =("You Lose! Paper beats Rock")
             return "lose"}
     else if (a==="paper" & y==="scissors")
-            {window.alert("You Win! Scissors beats Paper")
+            {div.textContent =("You Win! Scissors beats Paper")
             return "win"}
     else if (a==="scissors" & y==="paper")
-            {window.alert("You Lose! Scissors beats Paper")
+            {div.textContent =("You Lose! Scissors beats Paper")
             return "lose"}
     else if (a==="scissors" & y==="rock")
-            {window.alert("You Win! Rock beats Scissors")
+            {div.textContent =("You Win! Rock beats Scissors")
             return "win"}
-    else {window.alert("Choose Rock Paper or Scissors")
+    else {div.textContent =("Choose Rock Paper or Scissors")
             return "invalid"}
     }
     
-    function game()
+    function game(a)
         {   let computerChoice = getComputerChoice();
-            let playerChoice = (prompt ("Write rock, paper or scissors", "")).toLowerCase()
-            let result = selectionComparison (computerChoice, playerChoice)
+
+            let result = selectionComparison (computerChoice, a)
             if (result=="win")
             {scoreP=scoreP+1} 
-            else if (result=="lose")
-            {scoreC=scoreC+1}
+            else if (result=="lose");
+            {scoreC=scoreC+1};
+
             
-            
-            //console.log(result);
+           // div.textContent = computerChoice
             console.log(computerChoice);
-            console.log(playerChoice);
+            console.log(a);
         }
  
-
-    if (scoreC>scoreP)
-        {alert("You Lose")}
-    else if (scoreC<scoreP)
-        {alert("You win")}
-    else
-        {alert("It is a tie")}
+//if (scoreC>scoreP)
+//   {alert("You Lose")}
+//else if (scoreC<scoreP)
+//     {alert("You win")}
+//  else
+//       {alert("It is a tie")}
 
 </script>
 </html>
